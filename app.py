@@ -52,10 +52,6 @@ for i in range(100, data_training_array.shape[0]):
 x_train, y_train = np.array(x_train), np.array(y_train)
 
 
-model = load_model('predict_stock_price.keras')
-model = tf.compat.v1.keras.models.save_model(model, 'predict_stock_price_v2.keras')
-
-# Load the converted model
 model = tf.keras.models.load_model('predict_stock_price_v2.keras')
 
 past_100_days = data_training.tail(100)
