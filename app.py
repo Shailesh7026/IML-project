@@ -51,11 +51,15 @@ for i in range(100, data_training_array.shape[0]):
 
 x_train, y_train = np.array(x_train), np.array(y_train)
 
-st.write(f"Current directory: {os.getcwd()}")
-st.write(f"Model file exists: {os.path.exists('predict_stock_price_v2.keras')}")
+script_path = os.path.abspath(__file__)
+script_dir = os.path.dirname(script_path)
 
+# Specify the model file path relative to the script
+model_path = os.path.join(script_dir, 'predict_stock_price_v2.keras')
+
+# Load the model using the updated path
 try:
-    model = tf.keras.models.load_model('predict_stock_price_v2.keras')
+    model = tf.keras.models.load_model(model_path)
 except Exception as e:
     st.error(f"Error loading the model: {e}")
 
