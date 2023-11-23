@@ -52,7 +52,7 @@ for i in range(100, data_training_array.shape[0]):
 x_train, y_train = np.array(x_train), np.array(y_train)
 
 
-model = tf.keras.models.load_model('')
+model = tf.keras.models.load_model('predict_stock_price_v2.keras')
 
 
 
