@@ -51,10 +51,10 @@ for i in range(100, data_training_array.shape[0]):
 
 x_train, y_train = np.array(x_train), np.array(y_train)
 
-
 model = tf.keras.models.load_model('predict_stock_price_v2.keras')
 
-
+st.write("Current working directory:", os.getcwd())
+st.write("Files in the current directory:", os.listdir())
 
 past_100_days = data_training.tail(100)
 data_testing = data_testing.reset_index(drop=True)
