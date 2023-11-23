@@ -51,10 +51,16 @@ for i in range(100, data_training_array.shape[0]):
 
 x_train, y_train = np.array(x_train), np.array(y_train)
 
-
-model = tf.keras.models.load_model('predict_stock_price_v2.keras')
 st.write(f"Current directory: {os.getcwd()}")
 st.write(f"Model file exists: {os.path.exists('predict_stock_price_v2.keras')}")
+
+try:
+    model = tf.keras.models.load_model('predict_stock_price_v2.keras')
+except Exception as e:
+    st.error(f"Error loading the model: {e}")
+
+# model = tf.keras.models.load_model('predict_stock_price_v2.keras')
+
 
 
 past_100_days = data_training.tail(100)
