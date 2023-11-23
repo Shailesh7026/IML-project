@@ -10,7 +10,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 start = '2010-01-01'
 end = '2023-10-20'
-
+st.write("TensorFlow version:", tf.__version__)
 st.title('Stock Trend Prediction')
 
 st.write('You can find stock tickers from this site : https://finance.yahoo.com/')
