@@ -11,9 +11,6 @@ from sklearn.preprocessing import MinMaxScaler
 start = '2010-01-01'
 end = '2023-10-20'
 
-model_path = Path(__file__).parents[1] / './models/predict_stock_price_v2.keras'
-st.write(model_path)
-
 st.write("TensorFlow version:", tf.__version__)
 
 st.title('Stock Trend Prediction')
